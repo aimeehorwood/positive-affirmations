@@ -1,20 +1,27 @@
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function AffirmationItem({ item, pressHandler }) {
   return (
     <TouchableOpacity onPress={() => pressHandler(item.key)}>
-      <Text style={styles.item}>{item.text}</Text>
+      <View style={styles.itemContainer}>
+        <Text style={styles.itemText}>{item.text}</Text>
+      </View>
     </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
-  item: {
+  itemContainer: {
     padding: 16,
     marginTop: 16,
     borderColor: "black",
-    borderWidth: 2,
-    borderStyle: "dashed",
+    borderWidth: 1,
     borderRadius: 25,
+    backgroundColor: "#DBDBE6",
+  },
+  itemText: {
+    textAlign: "center",
+    fontSize: 17,
+    color: "black",
   },
 });
